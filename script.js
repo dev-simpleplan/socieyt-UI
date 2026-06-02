@@ -206,3 +206,66 @@ tl.to(".dot-3", {
 tl.to(".dot-4", {
     fill: "url(#dotGradient)"
 }, "point4");
+
+
+
+
+
+// ====== TEXT REVEAL ANIMATE =====
+
+gsap.utils.toArray(".reveal-up").forEach((element) => {
+
+    gsap.to(element, {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+
+        scrollTrigger: {
+            trigger: element,
+            start: "top 85%",
+            toggleActions: "play none none none"
+        }
+    });
+
+});
+
+
+
+
+// ==== STEPS SECTION CARD ANIMATE ======
+
+gsap.to(".process-card", {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    ease: "power3.out",
+
+    stagger: {
+        each: 0.25
+    },
+
+    scrollTrigger: {
+        trigger: ".steps_section_in",
+        start: "top 50%",
+    }
+});
+
+
+
+// ==== BANNER IMAGE & CONTENT ANIMATE ======
+
+gsap.from(".hero_section_img", {
+  scale: 1.2,
+  filter: "blur(20px)",
+  duration: 2,
+  ease: "power3.out",
+})
+
+gsap.from(".hero_content_wrap", {
+  y: 50,
+  opacity: 0,
+  duration: 1.5,
+  ease: "power3.out",
+  delay: 1
+})

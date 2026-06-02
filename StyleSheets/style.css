@@ -7,6 +7,10 @@
     #0f1a97 69%,
     #0a0a0a 95%
   );
+  --longevityLP_btn_gradient: linear-gradient(135deg, 
+    #895BF6 0%,
+    #F9783E 100%
+  );
 }
 
 * {
@@ -72,6 +76,24 @@ section {
   cursor: pointer;
 }
 
+.longevity_pageButton{
+  background: var(--longevityLP_btn_gradient);
+  color: var(--themeWhite);
+  background-size: 300% 100%;
+
+  moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.longevity_pageButton:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
 .container {
   width: 100%;
   max-width: 1440px;
@@ -95,6 +117,16 @@ section {
   color: rgba(176, 176, 176, 1);
 }
 
+
+.reveal-up {
+    opacity: 0;
+    transform: translateY(50px);
+    will-change: transform, opacity;
+}
+
+
+
+
 /* --------- HEADER STYLE START ---------- */
 header {
   position: absolute;
@@ -116,6 +148,10 @@ header {
   max-width: 140px;
 }
 /* --------- HEADER STYLE END ---------- */
+
+
+
+
 
 /* ------------- HERO SECTION STYLE START ------------- */
 
@@ -332,6 +368,19 @@ header {
 /* ================================================= */
 /* ------------ HEALTH SYSTEM TABS STYLE ----------- */
 
+.health_systems .fade_bar{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  height: 200px;
+
+  background: linear-gradient(#ffffff00 0%, var(--themeBlack) 100%);
+  z-index: -1;
+}
+
+
+
 .health_system_in{
     display: flex;
     flex-direction: column;
@@ -484,6 +533,12 @@ header {
   gap: 150px;
   padding-left: 20px;
   border-left: 0.7px solid rgba(150, 150, 150, 1);
+}
+
+.process-card{
+  opacity: 0;
+  transform: translateY(60px);
+  will-change: transform, opacity;
 }
 
 .step_cntnt_title{
