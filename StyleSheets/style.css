@@ -318,7 +318,7 @@ header {
   max-width: 140px;
 }
 
-.how_body_work_CTA {
+.section_CTA {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -329,8 +329,8 @@ header {
 
 
 
-
-/* ---------------- Section 4 Style --------------- */
+/* ================================================= */
+/* ------------ HEALTH SYSTEM TABS STYLE ----------- */
 
 .health_system_in{
     display: flex;
@@ -339,7 +339,6 @@ header {
 
     padding: 80px 0;
 }
-
 
 .health_system_in .section_head{
     max-width: 750px;
@@ -360,30 +359,16 @@ header {
 .tabs-panel {
   width: fit-content;
   flex-shrink: 0;
-  border-right: 0.5px solid var(--color-border-tertiary);
   padding: 8px 0;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
 }
 
 .tab-item {
   padding: 18px 0px;
   cursor: pointer;
   border-bottom: 0.7px solid rgba(104, 104, 104, 1);
-  transition:
-    background 0.18s,
-    border-color 0.18s;
 }
-
-.tab-item:hover {
-  background: var(--color-background-secondary);
-}
-
-/* .tab-item.active {
-    border-left-color: #7F77DD;
-    background: var(--color-background-secondary);
-  } */
 
 .tab-item h3 {
   margin: 0 0 4px;
@@ -404,9 +389,11 @@ header {
   flex-direction: column;
   justify-content: center;
 }
+
 .tab-content {
   display: none;
 }
+
 .tab-content.active {
   display: block;
 }
@@ -420,71 +407,192 @@ header {
   position: relative;
   gap: 20px;
 }
+
 .slider_image {
   width: 100%;
   height: 100%;
   max-height: 400px;
   object-fit: cover;
 }
+
 .slide-label {
-  font:
-    400 20px adobe-garamond-pro,
-    serif;
+  font:400 20px adobe-garamond-pro, serif;
 }
-.slide-label strong {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--color-text-primary);
-  display: block;
-}
-.slide-label span {
-  font-size: 11px;
-  color: var(--color-text-secondary);
-}
-.slide-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-.slide-placeholder i {
-  font-size: 32px;
-  color: var(--color-text-secondary);
-}
-.slide-placeholder span {
-  font-size: 12px;
-  color: var(--color-text-secondary);
-}
+
 .splide__arrows {
   display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-  margin-top: 14px;
+  justify-content: center;
+  gap: 2px;
+  margin-top: 20px;
 }
+
 .splide__arrow {
   position: static;
   transform: none;
-  width: 32px;
-  height: 32px;
-  border-radius: var(--border-radius-md);
-  background: var(--color-background-secondary);
-  border: 0.5px solid var(--color-border-secondary);
-  color: var(--color-text-primary);
+  width: 40px;
+  height: 40px;
+
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  transition: background 0.15s;
+
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
 }
-.splide__arrow:hover {
-  background: var(--color-background-tertiary);
+
+.splide__arrow img {
+  width: 40%;
+  height: auto;
 }
-.splide__arrow svg {
-  fill: var(--color-text-primary);
-  width: 14px;
-  height: 14px;
+
+.gradient_bg{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  z-index: -1;
+}
+
+
+
+
+/* =========================================== */
+/* -------------- STEPS SECTION -------------- */
+
+.steps_section_in{
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.steps_section_in .section_head .section_para{
+  max-width: 500px;
+}
+
+.steps_cntnt_wrap{
+  display: flex;
+  justify-content: space-between;
+}
+
+.steps_card_item{
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+  padding-left: 20px;
+  border-left: 0.7px solid rgba(150, 150, 150, 1);
+}
+
+.step_cntnt_title{
+  font-size: 24px;
+  font-weight: 500;
+  color: rgba(249, 120, 62, 1);
+}
+
+.step_cntnt_desc{
+  font-size: 16px;
+}
+
+
+
+
+
+/* =============================================== */
+/* ------------- OUTCOMES WHEEL SECTION ---------- */
+
+
+.outComes_wheel_wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.shift-wrapper{
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1;
+  position: relative;
+}
+
+.milestone-dot{
+  fill:#fff;
+  transition:fill .3s ease;
+}
+
+.milestone-dot.completed{
+  fill:url(#dotGradient);
+}
+
+#orbitPathGradient{
+  stroke: url(#dotGradient);
+}
+
+
+.shift-wrapper .point{
+  position: absolute;
+  opacity: 0;
+  transform: translateY(20px);
+  max-width: 200px;
+  min-width: 150px;
+  text-align: center;
+}
+
+.shift-wrapper .point-1{
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.shift-wrapper .point-2{
+  left: 95%;
+  top: 48%;
+}
+
+.shift-wrapper .point-3{
+  top: 94%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.shift-wrapper .point-4{
+  top: 48%;
+  right: 95%;
+}
+
+.wheel_image_wrap{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 70%;
+  height: 70%;
+
+  border-radius: 50%;
+  background: url(../Images/outcome_wheel_img.png) center no-repeat;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wheel_image_wrap .logoMark_area{
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background-color: var(--themeBlack);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoMark_img{
+  width: 80px;
+  height: auto;
 }

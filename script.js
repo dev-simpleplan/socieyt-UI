@@ -26,35 +26,183 @@ const splideInstances = {};
 
 function initSplide(index) {
   if (splideInstances[index]) return;
+
   const el = document.getElementById('splide-' + index);
   if (!el) return;
-  splideInstances[index] = new Splide(el, {
+
+  const splide = new Splide(el, {
     perPage: 2,
-    gap: '12px',
+    gap: '20px',
     pagination: false,
-    arrows: false,
-    breakpoints: { 500: { perPage: 1 } }
-  }).mount();
+    arrows: true,
+    breakpoints: {
+      500: {
+        perPage: 1
+      }
+    }
+  });
+
+  splide.mount();
+  splideInstances[index] = splide;
+
+  const arrows = el.querySelector('.splide__arrows');
+
+  function toggleArrows() {
+    const totalSlides = splide.length;
+    const perPage = splide.options.perPage;
+
+    arrows.style.display = totalSlides <= perPage ? 'none' : 'flex';
+  }
+
+  toggleArrows();
+
+  splide.on('updated resized', toggleArrows);
 
   const prev = el.querySelector('.splide__arrow--prev');
   const next = el.querySelector('.splide__arrow--next');
-  if (prev) prev.addEventListener('click', () => splideInstances[index].go('<'));
-  if (next) next.addEventListener('click', () => splideInstances[index].go('>'));
+
+  if (prev) {
+    prev.addEventListener('click', () => splide.go('<'));
+  }
+
+  if (next) {
+    next.addEventListener('click', () => splide.go('>'));
+  }
 }
 
+// Initialize first tab
 initSplide(0);
 
 document.querySelectorAll('.tab-item').forEach(tab => {
   function activate() {
     const idx = parseInt(tab.dataset.tab);
-    document.querySelectorAll('.tab-item').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+    document.querySelectorAll('.tab-item').forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+
+    document.querySelectorAll('.tab-content').forEach(c => {
+      c.classList.remove('active');
+    });
+
     tab.classList.add('active');
-    tab.setAttribute('aria-selected','true');
+    tab.setAttribute('aria-selected', 'true');
+
     const content = document.getElementById('tab-content-' + idx);
-    if (content) content.classList.add('active');
+
+    if (content) {
+      content.classList.add('active');
+    }
+
     initSplide(idx);
   }
+
   tab.addEventListener('click', activate);
-  tab.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
+
+  tab.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      activate();
+    }
+  });
 });
+
+
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+
+// Initial state
+gsap.set(".point", {
+    opacity: 0,
+    y: 20
+});
+
+const orbitProgress = document.querySelector("#orbitPathGradient");
+
+const pathLength = orbitProgress.getTotalLength();
+
+gsap.set(orbitProgress, {
+    strokeDasharray: pathLength,
+    strokeDashoffset: pathLength
+});
+
+// Timeline
+const tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".outcomes_section_in", // parent section
+        start: "top -50px",
+        end: "+=4000",
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+        markers: false // remove later
+    }
+});
+
+tl.to("#orbitPathGradient", {
+    strokeDashoffset: 0,
+    ease: "none",
+    duration: 1
+}, 0);
+
+// Move dot around full circle
+tl.to("#movingDot", {
+    motionPath: {
+        path: "#orbitPath",
+        align: "#orbitPath",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: false
+    },
+    ease: "none",
+    duration: 1
+}, 0);
+
+
+tl.addLabel("point1", 0);
+tl.addLabel("point2", 0.25);
+tl.addLabel("point3", 0.5);
+tl.addLabel("point4", 0.75);
+
+// Point 1 visible immediately
+tl.to(".point-1", {
+    opacity: 1,
+    y: 0,
+    duration: 0.05
+}, "point1");
+
+// Point 2 visible at 25%
+tl.to(".point-2", {
+    opacity: 1,
+    y: 0,
+    duration: 0.05
+}, "point2");
+
+// Point 3 visible at 50%
+tl.to(".point-3", {
+    opacity: 1,
+    y: 0,
+    duration: 0.05
+}, "point3");
+
+// Point 4 visible at 75%
+tl.to(".point-4", {
+    opacity: 1,
+    y: 0,
+    duration: 0.05
+}, "point4");
+// Point 1 reached
+tl.to(".dot-1", {
+    fill: "url(#dotGradient)"
+}, "point1");
+
+tl.to(".dot-2", {
+    fill: "url(#dotGradient)"
+}, "point2");
+
+tl.to(".dot-3", {
+    fill: "url(#dotGradient)"
+}, "point3");
+
+tl.to(".dot-4", {
+    fill: "url(#dotGradient)"
+}, "point4");
