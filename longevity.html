@@ -29,7 +29,7 @@
 </head>
 <body>
 
-    <div class="wrapper">
+    <main class="wrapper">
 
         <!-- Header -->
         <Header>
@@ -607,46 +607,54 @@
 
 
         <!-- Difference Section -->
-        <div class="difference_section">
+        <section class="difference_section">
             <div class="container">
                 <div class="difference_section_in">
+
+                    <div class="difference_img">
+                        <img src="Images/difference_abs_img.png" alt="">
+                    </div>
 
                     <div class="section_head section_head_center reveal-up">
                         <h2 class="section_title">The body is more intelligent than we treat it.</h2>
                         <p class="section_para">Longevity is not just about fixing what’s visible — but working at the level where change actually begins.</p>
                     </div>
 
-                    <div class="venn-root" id="venn-root">
-                        <div class="venn-wrap" id="venn-wrap">
-                            <svg id="vs" width="680" height="440" viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="lg" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%"   stop-color="#8b5cf6"/>
-                                <stop offset="48%"  stop-color="#c46bb0"/>
-                                <stop offset="100%" stop-color="#f97316"/>
-                                </linearGradient>
-                                <radialGradient id="sheen" cx="50%" cy="30%" r="52%">
-                                <stop offset="0%"   stop-color="#fff" stop-opacity="0.16"/>
-                                <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-                                </radialGradient>
+                    <div class="venn-section">
+                        <div id="venn-root">
+                            <svg id="vs"
+                                viewBox="0 0 680 440"
+                                preserveAspectRatio="xMidYMid meet"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="lg" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%"   stop-color="#8b5cf6"/>
+                                        <stop offset="48%"  stop-color="#c46bb0"/>
+                                        <stop offset="100%" stop-color="#f97316"/>
+                                    </linearGradient>
 
-                                <!-- Glow filter for circles -->
-                                <filter id="glow-left" x="-40%" y="-40%" width="180%" height="180%">
-                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                                </filter>
-                                <filter id="glow-right" x="-40%" y="-40%" width="180%" height="180%">
-                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                                </filter>
-                                <filter id="glow-lens" x="-30%" y="-30%" width="160%" height="160%">
-                                <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                                </filter>
-                            </defs>
+                                    <radialGradient id="sheen" cx="50%" cy="30%" r="52%">
+                                        <stop offset="0%"   stop-color="#fff" stop-opacity="0.16"/>
+                                        <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+                                    </radialGradient>
+
+                                    <filter id="glow-lens" x="-30%" y="-30%" width="160%" height="160%">
+                                        <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="b"/>
+                                        <feMerge>
+                                        <feMergeNode in="b"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                        </feMerge>
+                                    </filter>
+                                </defs>
                             </svg>
-                            <span class="label label-left" id="lbl-left">Treating symptoms extends life.</span>
-                            <span class="label label-right" id="lbl-right">Understanding systems sustains it.</span>
+
+                            <div class="venn-labels">
+                                <span class="venn-label venn-label-left">Treating symptoms extends life.</span>
+                                <div class="logomrk_label">
+                                    <img src="Images/logomark_white.svg" alt="">
+                                </div>
+                                <span class="venn-label venn-label-right">Understanding systems sustains it.</span>
+                            </div>
                         </div>
                     </div>
 
@@ -656,14 +664,263 @@
 
                 </div>
             </div>
-        </div>
+        </section>
 
+
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        
+
+        <!-- PLAN & PRICING Section -->
+        <section class="plan_section">
+            <div class="container">
+                <div class="plan_section_in">
+
+                    <div class="section_head section_head_center reveal-up">
+                        <h2 class="section_title">Access & Membership</h2>
+                    </div>
+
+                    <div class="plan_cards_container">
+                        
+                        <div class="plan_card plan_card_animate">
+                            <div class="plan_topInfo">
+                                <div class="plan_category">AWAKEN</div>
+                                <div class="plan_price_info">
+                                    <h4 class="plan_price">$295/mo</h4>
+                                    <p class="plan_price_description">Dictum aliquet arcu egestas massa sedole tellus sed arcu velit tincidunt.</p>
+                                </div>
+                            </div>
+                            <div class="plan_btn">
+                                <button class="pageButton longevity_pageButton">Get Started</button>
+                            </div>
+                            <div class="plan_benefit_info">
+                                <div class="plan_benefit_title">What’s included?</div>
+                                <ul>
+                                    <li class="plan_benefit_listItem">4 sessions/month (any modality)</li>
+                                    <li class="plan_benefit_listItem">Personalized intake protocol</li>
+                                    <li class="plan_benefit_listItem">Community event access</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="plan_card plan_card_animate">
+                            <div class="plan_topInfo">
+                                <div class="plan_category">EVOLVE</div>
+                                <div class="plan_price_info">
+                                    <h4 class="plan_price">$595/mo</h4>
+                                    <p class="plan_price_description">Dictum aliquet arcu egestas massa sedole tellus sed arcu velit tincidunt.</p>
+                                </div>
+
+                                <div class="plan_tag">Most Popular</div>
+                            </div>
+                            <div class="plan_btn">
+                                <button class="pageButton longevity_pageButton">Get Started</button>
+                            </div>
+                            <div class="plan_benefit_info">
+                                <div class="plan_benefit_title">What’s included?</div>
+                                <ul>
+                                    <li class="plan_benefit_listItem">8 sessions/month</li>
+                                    <li class="plan_benefit_listItem">Hyper-powered personalized wellness roadmap</li>
+                                    <li class="plan_benefit_listItem">Priority booking</li>
+                                    <li class="plan_benefit_listItem">Monthly progress check-in</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="plan_card plan_card_animate">
+                            <div class="plan_topInfo">
+                                <div class="plan_category">TRANSCEND</div>
+                                <div class="plan_price_info">
+                                    <h4 class="plan_price">$795/mo</h4>
+                                    <p class="plan_price_description">Dictum aliquet arcu egestas massa sedole tellus sed arcu velit tincidunt.</p>
+                                </div>
+                            </div>
+                            <div class="plan_btn">
+                                <button class="pageButton longevity_pageButton">Get Started</button>
+                            </div>
+                            <div class="plan_benefit_info">
+                                <div class="plan_benefit_title">What’s included?</div>
+                                <ul>
+                                    <li class="plan_benefit_listItem">Unlimited sessions</li>
+                                    <li class="plan_benefit_listItem">Private rituals + integrations </li>
+                                    <li class="plan_benefit_listItem">VIP access to retreats & guest speakers</li>
+                                    <li class="plan_benefit_listItem">1:1 concierge wellness support</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
 
         <div class="spacer"></div>
 
 
-    </div>
+        <section class="faq-section">
+            <div class="container">
+                <div class="faqSection_in">
+
+                    <div class="section_head">
+                        <h2 class="section_title">Frequently Asked Questions</h2>
+                    </div>
+
+                    <div class="faq-container">
+                        <div class="faq-item active">
+                        <button class="faq-question">
+                            1. Is this only for people who are older or already facing health issues? <span class="icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No. Socieyt is designed for those who want to build healthspan early — not react to decline later.</p>
+                        </div>
+                        </div>
+
+                        <div class="faq-item">
+                        <button class="faq-question">
+                            2. What exactly does a membership include? <span class="icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No. Socieyt is designed for those who want to build healthspan early — not react to decline later.</p>
+                        </div>
+                        </div>
+
+                        <div class="faq-item">
+                        <button class="faq-question">
+                            3. How is this different from a medspa or wellness center? <span class="icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No. Socieyt is designed for those who want to build healthspan early — not react to decline later.</p>
+                        </div>
+                        </div>
+
+                        <div class="faq-item">
+                        <button class="faq-question">
+                            4. Do I need prior medical reports or biomarker data? <span class="icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No. Socieyt is designed for those who want to build healthspan early — not react to decline later.</p>
+                        </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                5. How is my protocol decided? <span class="icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>No. Socieyt is designed for those who want to build healthspan early — not react to decline later.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                6. How soon will I start noticing changes? <span class="icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>No. Socieyt is designed for those who want to build healthspan early — not react to decline later.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                7. How often do I need to come in? <span class="icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>No. Socieyt is designed for those who want to build healthspan early — not react to decline later.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                8. Is this a one-time experience or ongoing? <span class="icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>No. Socieyt is designed for those who want to build healthspan early — not react to decline later.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                9. What kind of outcomes can I expect? <span class="icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>No. Socieyt is designed for those who want to build healthspan early — not react to decline later.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                10. Who is this best suited for? <span class="icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>No. Socieyt is designed for those who want to build healthspan early — not react to decline later.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+
+
+        <!-- PRE FOOTER CTA SECTION -->
+        <section class="preFooter_CTA">
+            <div class="container">
+                <div class="preFooter_in">
+
+                    <div class="preFooter_cntnt reveal-up">
+                        <h3 class="preFooter_title">Your best years aren’t behind you. They’re being built right now.</h3>
+                        <p class="preFooter_desc">Longevity compounds — in both directions. Choose the one you build toward.</p>
+                        <div class="preFooter_cta_btn">
+                            <button class="pageButton longevity_pageButton"> sign up for Early Access</button>
+                        </div>
+                    </div>
+
+                    <div class="preFooter_img_wrap">
+                        <img src="Images/preFooter_img.png" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <div class="spacer"></div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer_in longevity_footer">
+                <div class="footer_logo_imgWrap reveal-up">
+                    <img src="Images/Longevity_footer_logo.svg" alt="">
+                </div>
+
+                <div class="footer_info_bar">
+                    <div class="footer_rights_content">
+                        <p>&copy; Socieyt 2026 | All rights reserved</p>
+                    </div>
+                    <div class="footer_madeBy_content">
+                        <div class="madeBy_item">Made With</div>
+                        <div class="madeBy_item">
+                            <img src="Images/madeWith_heartIcon.svg" alt="">
+                        </div>
+                        <div class="madeBy_item">by <a href="#">SimplePlan</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer_fade_bar"></div>        
+
+        <div class="footer_gradient">
+            <img src="Images/footer_gradient.png" alt="">
+        </div>
+    </footer>
 
 
 
