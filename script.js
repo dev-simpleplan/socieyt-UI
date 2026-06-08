@@ -150,7 +150,7 @@ const tl = gsap.timeline({
     scrub: true,
     pin: true,
     anticipatePin: 1,
-    markers: true,
+    markers: false,
   },
 });
 
