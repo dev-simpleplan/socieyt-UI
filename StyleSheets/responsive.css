@@ -1,0 +1,246 @@
+
+@media screen and (max-width: 1279px){
+  
+}
+
+@media screen and (max-width: 991px){
+    .hero_section_img {
+        width: 100%;
+    }
+
+    .tabs-slider-root {
+        gap: 20px;
+    }
+
+    .how_body_works{
+        border: 0;
+    }
+
+    .body_works_imgWrap{
+        position: relative;
+        left: auto;
+        aspect-ratio: unset;
+        width: 500px;
+        height: 500px;
+    }
+    .body_work_mainCntnt{
+        width: 100%;
+        gap: 100px;
+    }
+    .body_works_miniCntnt{
+        max-width: 100%;
+    }
+
+
+
+    .steps_cntnt_wrap{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 40px 20px;
+    }
+
+    .approach_slider_wrap{
+        padding: 0 40px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    section{
+        overflow: hidden;
+    }
+
+    .hero_section{
+        overflow: hidden;
+    }
+    .hero_section_img {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 200%;
+        transform: translate(-50%, 0);
+    }
+
+
+
+    .early_action_cntnt_wrap .section_head {
+        max-width: 500px;
+    }
+
+
+    .tabs-slider-root{
+        flex-direction: column;
+    }
+    .tabs-panel{
+        width: 100%;
+    }
+    .slider-panel{
+        padding: 24px 0 100px 50px;
+    }
+    .slider_image{
+        max-height: unset;
+    }
+
+
+
+
+    .early_action_Img{
+        width: 150%;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    
+    .early_action_in {
+        padding: 0px 0 100px 0;
+    }
+    .early_action_miniCntnt{
+        margin-top: 50px;
+    }
+
+
+    .body_works_imgWrap{
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1/1;
+    }
+    .body_work_mainCntnt{
+        gap: 50px;
+    }
+    .ctaPara{
+        text-align: center;
+        max-width: 90%;
+    }
+
+
+    .tabs-panel{
+        padding: 8px 0 8px 35px;
+    }
+    .tab-logomark{
+        width: 25px;
+        height: 25px;
+        left: -35px;
+    }
+
+
+    .approach_gradient {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: -1;
+        width: 200%;
+    }
+
+
+    .difference_img {
+        max-width: unset;
+        position: absolute;
+        left: 50%;
+        top: 0px;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+
+    .venn-section{
+        margin-top: 0;
+        padding: 40px 0;
+    }
+    .logomrk_label{
+        max-width: 30px;
+    }
+    .venn-label{
+        font-size: 14px;
+    }
+
+    .spacer.hideSpacer{
+        display: none;
+    }
+
+
+
+    .plan_section_in{
+        padding: 40px 0;
+    }
+    .plan_cards_container{
+        max-width: unset;
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .faqSection_in{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .faqSection_in .section_head{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+
+    .preFooter_in{
+        padding-bottom: 300px;
+    }
+    .preFooter_cntnt .preFooter_title{
+        font-size: 38px;
+    }
+    .preFooter_img_wrap{
+        width: 120%;
+        max-width: unset;
+    }
+
+
+
+    .footer_in{
+        padding: 40px 0 0;
+        gap: 50px;
+    }
+    .footer_gradient img{
+        margin-bottom: -50px;
+    }
+}
+
+
+@media screen and (max-width: 479px){
+    .hero_section_img{
+        width: 300%;
+    }
+    .hero_cntnt_points{
+        text-align: center;
+        max-width: 86%;
+    }
+
+
+
+    .slider-panel{
+        padding: 10px 0 60px;
+    }
+
+
+
+    .steps_cntnt_wrap{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .steps_card_item{
+        gap: 60px;
+    }
+
+
+
+    .highlightText p{
+        font-size: 14px;
+    }
+
+
+    .footer_info_bar{
+        flex-direction: column;
+        align-items: center;
+    }
+}   

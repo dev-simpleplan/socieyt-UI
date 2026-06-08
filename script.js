@@ -29,9 +29,15 @@ function initSplide(index) {
     pagination: false,
     arrows: true,
     breakpoints: {
-      500: {
+      991: {
         perPage: 1,
       },
+      // 767: {
+      //   perPage: 2,
+      // },
+      // 479: {
+      //   perPage: 1,
+      // },
     },
   });
 
@@ -108,6 +114,15 @@ document.addEventListener("DOMContentLoaded", function () {
     gap: "30px",
     padding: { left: 150, right: 0 },
     pagination: false,
+    breakpoints: {
+      991: {
+        perPage: 2,
+        padding: { left: 0, right: 0 },
+      },
+      480: {
+        perPage: 1,
+      },
+    },
   }).mount();
 });
 
@@ -131,11 +146,11 @@ const tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".outcomes_section_in",
     start: "top -50px",
-    end: "+=4000",
+    end: "+=4000px",
     scrub: true,
     pin: true,
     anticipatePin: 1,
-    markers: false,
+    markers: true,
   },
 });
 
@@ -213,6 +228,7 @@ tl.to(
   ".dot-1",
   {
     fill: "url(#dotGradient)",
+    duration: 0.05,
   },
   "point1",
 );
@@ -220,6 +236,7 @@ tl.to(
   ".dot-2",
   {
     fill: "url(#dotGradient)",
+    duration: 0.05,
   },
   "point2",
 );
@@ -227,6 +244,7 @@ tl.to(
   ".dot-3",
   {
     fill: "url(#dotGradient)",
+    duration: 0.05,
   },
   "point3",
 );
@@ -234,6 +252,7 @@ tl.to(
   ".dot-4",
   {
     fill: "url(#dotGradient)",
+    duration: 0.05,
   },
   "point4",
 );
@@ -473,7 +492,6 @@ function intersect() {
   function setInnerGlowOpacity(gradId, op) {
     const stops = defs.querySelector("#" + gradId).querySelectorAll("stop");
     stops[1].setAttribute("stop-opacity", (op * 0.55).toFixed(3));
-    stops[2].setAttribute("stop-opacity", op.toFixed(3));
   }
 
   // ── Glow trigger — fires once when line reaches lens ──
@@ -564,23 +582,6 @@ intersect();
 
 
 
-// ==== PLANS SECTION CARD ANIMATE ======
-// gsap.from(".plan_card_animate", {
-//   y: 60,
-//   opacity: 0,
-//   duration: 1,
-//   ease: "power1.out", 
-
-//   stagger: {
-//     each: 0.25,
-//   },
-
-//   scrollTrigger: {
-//     trigger: ".plan_section_in",
-//     start: "top 60%",
-//     markers: true,
-//   },
-// });
 
 
 

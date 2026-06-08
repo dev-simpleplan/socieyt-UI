@@ -41,6 +41,7 @@ h2 {
   line-height: 110%;
 }
 
+
 p {
   font-size: 18px;
   line-height: 150%;
@@ -123,6 +124,26 @@ section {
   will-change: transform, opacity;
 }
 
+@media screen and (max-width: 991px){
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 110%;
+  }
+  .container{
+    padding: 0 20px;
+    overflow: hidden;
+  }
+}
+
+
+
+
+
+
 /* --------- HEADER STYLE START ---------- */
 header {
   position: absolute;
@@ -174,6 +195,10 @@ header {
   gap: 20px;
 
   height: 100%;
+}
+
+.hero_title{
+  text-align: center;
 }
 
 .hero_content_wrap_bot {
@@ -458,6 +483,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-bottom: 100px;
 }
 
 .tab-content {
@@ -494,6 +520,12 @@ header {
   gap: 2px;
   margin-top: 20px;
   z-index: 1;
+}
+
+.tab-content .splide__arrows{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .splide__arrow {
@@ -1290,11 +1322,12 @@ footer{
 
 footer .footer_fade_bar{
   position: absolute;
-  top: -60px;
+  top: 0px;
   left: 0;
 
   width: 100%;
   height: 100px;
 
   background: linear-gradient(360deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 1) 100%);
+  z-index: 1;
 }
