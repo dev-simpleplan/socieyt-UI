@@ -29,6 +29,8 @@ function initSplide(index) {
   if (!el) return;
 
   const splide = new Splide(el, {
+    type: 'slide', 
+    perMove: 1,
     perPage: 2,
     gap: "20px",
     pagination: false,
@@ -37,12 +39,6 @@ function initSplide(index) {
       991: {
         perPage: 1,
       },
-      // 767: {
-      //   perPage: 2,
-      // },
-      // 479: {
-      //   perPage: 1,
-      // },
     },
   });
 
@@ -62,16 +58,16 @@ function initSplide(index) {
 
   splide.on("updated resized", toggleArrows);
 
-  const prev = el.querySelector(".splide__arrow--prev");
-  const next = el.querySelector(".splide__arrow--next");
+  // const prev = el.querySelector(".splide__arrow--prev");
+  // const next = el.querySelector(".splide__arrow--next");
 
-  if (prev) {
-    prev.addEventListener("click", () => splide.go("<"));
-  }
+  // if (prev) {
+  //   prev.addEventListener("click", () => splide.go("<"));
+  // }
 
-  if (next) {
-    next.addEventListener("click", () => splide.go(">"));
-  }
+  // if (next) {
+  //   next.addEventListener("click", () => splide.go(">"));
+  // }
 }
 
 // Initialize first tab
@@ -112,6 +108,11 @@ document.querySelectorAll(".tab-item").forEach((tab) => {
   });
 });
 
+
+
+
+
+// =========== Approach Card Slider ===========
 document.addEventListener("DOMContentLoaded", function () {
   new Splide("#approach_splide", {
     perPage: 3,
@@ -279,6 +280,12 @@ tl.to(
   "point4",
 );
 
+
+
+
+
+// =================== SMALL ANIMATION SNIPPETS ======================
+
 // ====== TEXT REVEAL ANIMATE =====
 
 gsap.utils.toArray(".reveal-up").forEach((element) => {
@@ -314,7 +321,6 @@ gsap.to(".process-card", {
 });
 
 
-// =========================================
 // ==== BANNER IMAGE & CONTENT ANIMATE ======
 
 gsap.from(".hero_section_img", {
@@ -337,6 +343,8 @@ gsap.from(".hero_content_wrap", {
 
 // ===========================================================
 // ------- Difference Section Intersect Shape Code ------------
+// ===========================================================
+
 function intersect() {
   const svg = document.getElementById("vs");
   const ns = "http://www.w3.org/2000/svg";
@@ -606,9 +614,9 @@ intersect();
 
 
 
+// ======== FAQs Open/Close Code ===========
 
 const faqItems = document.querySelectorAll(".faq-item");
-
 faqItems.forEach(item => {
   const btn = item.querySelector(".faq-question");
 

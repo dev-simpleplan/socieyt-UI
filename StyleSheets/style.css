@@ -550,6 +550,11 @@ header {
   border: none;
 }
 
+.splide__arrow:disabled{
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .splide__arrow img {
   width: 40%;
   height: auto;
