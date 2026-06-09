@@ -136,11 +136,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
 // ====================================================
 // OUTCOMES WHEEL ROTATE SCRIPT -------------------------->
 // ====================================================
+const outcomesSection = document.querySelector(".outcomes_section_in");
+if (outcomesSection) {
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -152,6 +152,7 @@ gsap.set(".point", {
 
 const orbitProgress = document.querySelector("#orbitPathGradient");
 const pathLength = orbitProgress.getTotalLength();
+
 gsap.set(orbitProgress, {
   strokeDasharray: pathLength,
   strokeDashoffset: pathLength,
@@ -279,6 +280,152 @@ tl.to(
   },
   "point4",
 );
+}
+
+
+
+// ====================================================
+// RESTORES WHEEL ROTATE SCRIPT -------------------------->
+// ====================================================
+const restoreWheelSection = document.querySelector(".restore-wheel-section");
+if (restoreWheelSection) {
+  gsap.set(".restore-card", {
+      opacity:0,
+      y:25
+  });
+  const restoreProgress = document.querySelector("#restoreOrbitProgress");
+
+  const restoreLength = restoreProgress.getTotalLength();
+
+  gsap.set(restoreProgress,{
+      strokeDasharray:restoreLength,
+      strokeDashoffset:restoreLength
+  });
+  const restoreTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".restore-wheel-inner",
+      // start: "top -50px",
+
+      start: () => {
+        return window.innerWidth < 480
+          ? "top 50px"
+          : "top 30px";
+      },
+
+      end: "+=4000px",
+      scrub: true,
+      pin: true,
+      anticipatePin: 1,
+      markers: false,
+    },
+  });
+  restoreTl.to(
+      "#restoreOrbitProgress",
+      {
+          strokeDashoffset:0,
+          ease:"none",
+          duration:1
+      },
+      0
+  );
+  restoreTl.to(
+      "#restoreMovingDot",
+      {
+          motionPath:{
+              path:"#restoreOrbitPath",
+              align:"#restoreOrbitPath",
+              alignOrigin:[0.5,0.5]
+          },
+
+          ease:"none",
+          duration:1
+      },
+      0
+  );
+  restoreTl.addLabel("restore1",0.16);
+  restoreTl.addLabel("restore2",0.32);
+  restoreTl.addLabel("restore3",0.65);
+  restoreTl.addLabel("restore4",0.82);
+  restoreTl.to(
+      ".restore_card1",
+      {
+          opacity:1,
+          y:0,
+          duration:.05
+      },
+      "restore1"
+  );
+
+  restoreTl.to(
+      ".restore_card2",
+      {
+          opacity:1,
+          y:0,
+          duration:.05
+      },
+      "restore2"
+  );
+
+  restoreTl.to(
+      ".restore_card3",
+      {
+          opacity:1,
+          y:0,
+          duration:.05
+      },
+      "restore3"
+  );
+
+  restoreTl.to(
+      ".restore_card4",
+      {
+          opacity:1,
+          y:0,
+          duration:.05
+      },
+      "restore4"
+  );
+  restoreTl.to(
+      ".restore-point-1 .restore-dot-inner",
+      {
+          backgroundColor:"#895BF6",
+          duration:.05
+      },
+      "restore1"
+  );
+
+  restoreTl.to(
+      ".restore-point-2 .restore-dot-inner",
+      {
+          backgroundColor:"#895BF6",
+          duration:.05
+      },
+      "restore2"
+  );
+
+  restoreTl.to(
+      ".restore-point-3 .restore-dot-inner",
+      {
+          backgroundColor:"#895BF6",
+          duration:.05
+      },
+      "restore3"
+  );
+
+  restoreTl.to(
+      ".restore-point-4 .restore-dot-inner",
+      {
+          backgroundColor:"#895BF6",
+          duration:.05
+      },
+      "restore4"
+  );
+
+}
+
+
+
+
 
 
 
