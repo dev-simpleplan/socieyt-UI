@@ -73,6 +73,9 @@ section {
   padding: 5px 20px;
   border: none;
   cursor: pointer;
+  text-decoration: none;
+  display: block;
+  text-align: center;
 }
 
 .longevity_pageButton {
