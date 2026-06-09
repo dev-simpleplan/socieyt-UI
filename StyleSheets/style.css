@@ -138,6 +138,11 @@ section {
     overflow: hidden;
   }
 }
+@media screen and (max-width: 480px){
+  p {
+    font-size: 16px;
+  }
+}
 
 
 

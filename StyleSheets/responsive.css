@@ -153,6 +153,7 @@
     }
     .venn-label{
         font-size: 14px;
+        line-height: 110%;
     }
 
     .spacer.hideSpacer{
@@ -209,7 +210,7 @@
 
 @media screen and (max-width: 479px){
     .hero_section_img{
-        width: 300%;
+        width: 260%;
     }
     .hero_cntnt_points{
         text-align: center;
@@ -218,8 +219,59 @@
 
 
 
+    .section_CTA{
+        margin-top: 100px;
+    }
+
+
+
+    .outComes_wheel_wrapper{
+        margin-top: 100px;
+    }
+    .shift-wrapper{
+        max-width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .circle-svg{
+        width: 200px;
+        height: 200px;
+    }
+    .shift-wrapper .point{
+        font-size: 14px;
+        min-width: 78px;
+    }
+    .shift-wrapper .point-1{
+        top: -60px;
+    }
+    .shift-wrapper .point-2,
+    .shift-wrapper .point-4{
+        top: 35%;
+    }
+    .shift-wrapper .point-3{
+        top: 100%;
+    }
+    .wheel_image_wrap .logoMark_area{
+        width: 50%;
+        height: 50%;
+    }
+    .logoMark_img{
+        max-width: 40px;
+    }
+
+
+    .health_system_in{
+        gap: 40px;
+    }
     .slider-panel{
         padding: 10px 0 60px;
+    }
+    .tab-item h3{
+        font-size: 18px;
+    }
+    .tab-item p{
+        font-size: 14px;
     }
 
 
@@ -235,6 +287,38 @@
 
 
     .highlightText p{
+        font-size: 14px;
+    }
+
+
+    .approach_slider_wrap{
+        padding: 0 20px;
+    }
+    .approach_slider_wrap .splide__slide .slider_image{
+        height: 300px;
+        aspect-ratio: auto;
+    }
+
+
+    .difference_section_in{
+        padding-top: 50px;
+    }
+    .difference_img{
+        width: 140%;
+        top: -40px;
+    }
+    #vs line{
+        stroke-width: 2px;
+    }
+
+
+
+    .faq-question{
+        font-size: 16px;
+        gap: 20px;
+        line-height: 130%;
+    }
+    .faq-answer p{
         font-size: 14px;
     }
 
