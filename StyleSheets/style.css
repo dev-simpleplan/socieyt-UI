@@ -1416,7 +1416,7 @@ footer .footer_fade_bar{
 
 /* Hero Section */
 .serviceHero_section{
-  background: url(../Images/serviceLP_hero_img.png) center no-repeat rgba(0, 0, 0, 0.4);
+  background: url(../Images/servicelp_hero_img.png) center no-repeat rgba(0, 0, 0, 0.4);
   background-size: cover;
   background-blend-mode: overlay;
   z-index: 0;
