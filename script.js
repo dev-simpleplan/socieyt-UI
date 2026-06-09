@@ -13,8 +13,13 @@ gsap.ticker.add((time) => {
 // Disable lag smoothing in GSAP to prevent any delay in scroll animations
 gsap.ticker.lagSmoothing(0);
 
-// HEALTH SYSTEM TAB SCRIPT -------------------------->
 
+
+
+
+// ====================================================
+// HEALTH SYSTEM TAB SCRIPT -------------------------->
+// ====================================================
 const splideInstances = {};
 
 function initSplide(index) {
@@ -126,6 +131,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }).mount();
 });
 
+
+
+
+
+
+
+// ====================================================
+// OUTCOMES WHEEL ROTATE SCRIPT -------------------------->
+// ====================================================
+
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 // Initial state
@@ -145,7 +160,14 @@ gsap.set(orbitProgress, {
 const tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".outcomes_section_in",
-    start: "top -50px",
+    // start: "top -50px",
+
+    start: () => {
+      return window.innerWidth < 480
+        ? "top 50px"
+        : "top -50px";
+    },
+
     end: "+=4000px",
     scrub: true,
     pin: true,

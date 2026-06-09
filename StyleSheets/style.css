@@ -311,6 +311,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .body_work_imgLine {
