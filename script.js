@@ -783,3 +783,10 @@ faqItems.forEach(item => {
     icon.textContent = item.classList.contains("active") ? "–" : "+";
   });
 });
+
+
+
+
+
+
+
