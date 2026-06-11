@@ -449,6 +449,34 @@ gsap.utils.toArray(".reveal-up").forEach((element) => {
     },
   });
 });
+gsap.utils.toArray(".restore_mobCard_ltr").forEach((element) => {
+  gsap.from(element, {
+    x: -200,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+
+    scrollTrigger: {
+      trigger: element,
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+  });
+});
+gsap.utils.toArray(".restore_mobCard_rtl").forEach((element) => {
+  gsap.from(element, {
+    x: 100,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+
+    scrollTrigger: {
+      trigger: element,
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+  });
+});
 
 // ==== STEPS SECTION CARD ANIMATE ======
 gsap.to(".process-card", {
@@ -790,7 +818,84 @@ const faqItems = document.querySelectorAll(".faq-item");
 
 
 
+const track = document.getElementById('track');
+
+if (track) {
+  const originalItems = [...track.querySelectorAll('.ticker-item')];
+
+  originalItems.forEach(item => {
+      track.appendChild(item.cloneNode(true));
+  });
+
+  const firstItem = originalItems[0];
+  const itemStyle = getComputedStyle(firstItem);
+  const ITEM_W = firstItem.offsetWidth
+      + parseFloat(itemStyle.marginLeft)
+      + parseFloat(itemStyle.marginRight);
+
+  const segW = originalItems.length * ITEM_W;
+
+  gsap.fromTo(track,
+      { x: 0 },
+      { x: -segW, duration: segW / 80, ease: 'none', repeat: -1 }
+  );
+}
 
 
 
 
+
+document.querySelectorAll(".img-reveal").forEach((wrapper) => {
+    const img = wrapper.querySelector("img");
+
+    // Determine direction
+    const fromLeft  = wrapper.classList.contains("from-left");
+    const fromRight = wrapper.classList.contains("from-right");
+    const fromTop   = wrapper.classList.contains("from-top");
+    // default = from-bottom
+
+    // Clip path start & end states
+    let clipStart, clipEnd, imgFrom;
+
+    if (fromLeft) {
+        clipStart = "inset(0 100% 0 0)";
+        clipEnd   = "inset(0 0% 0 0)";
+        imgFrom   = { x: "-40px" };
+    } else if (fromRight) {
+        clipStart = "inset(0 0 0 100%)";
+        clipEnd   = "inset(0 0 0 0%)";
+        imgFrom   = { x: "40px" };
+    } else if (fromTop) {
+        clipStart = "inset(0 0 100% 0)";
+        clipEnd   = "inset(0 0 0% 0)";
+        imgFrom   = { y: "-40px" };
+    } else {
+        // from-bottom (default)
+        clipStart = "inset(100% 0 0 0)";
+        clipEnd   = "inset(0% 0 0 0)";
+        imgFrom   = { y: "40px" };
+    }
+
+    gsap.set(wrapper, { clipPath: clipStart });
+    gsap.set(img, imgFrom);
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: wrapper,
+            start: "top 88%",
+            toggleActions: "play none none none",
+        }
+    });
+
+    tl.to(wrapper, {
+        clipPath: clipEnd,
+        duration: 1,
+        ease: "power3.inOut",
+    })
+    .to(img, {
+        x: 0,
+        y: 0,
+        duration: 1,
+        ease: "power3.inOut",
+    }, 0); // ← runs simultaneously
+});

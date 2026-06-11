@@ -357,3 +357,309 @@
         align-items: center;
     }
 }   
+
+
+
+
+/* =========================================== */
+/* ------- SERVICE LP RESPONSIVE STYLE ------- */
+/* =========================================== */
+
+@media screen and (max-width: 1279px){
+    .restore_card1 {
+        top: 24%;
+        left: 70%;
+        max-width: 280px;
+    }
+
+
+    .moment_cntnt_wrapper .moment_img_Wrap{
+        width: 80%;
+    }
+
+
+    .tech_meet_bio_cntntWrap{
+        gap: 10px;
+    }
+    .tech_meet_bio_card{
+        gap: 80px;
+    }
+}
+
+
+
+/* === TABLET: 991px and below === */
+@media (max-width: 991px) {
+    .hero_content_wrap_top h1{
+        font-size: 48px;
+    }
+
+  .restore-wheel-wrapper {
+    max-width: 600px;
+    margin-top: -60px;
+  }
+
+  .restore_card1 {
+    top: 22%;
+    left: 72%;
+    max-width: 240px;
+  }
+  .restore_card2 {
+    top: 60%;
+    left: 64%;
+    max-width: 220px;
+  }
+  .restore_card3 {
+    top: 60%;
+    left: -2%;
+    max-width: 220px;
+  }
+  .restore_card4 {
+    top: 22%;
+    left: -4%;
+    max-width: 220px;
+  }
+
+  .restore-card h3 {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 6px;
+  }
+  .restore-card p {
+    font-size: 12px;
+  }
+  .restore-card {
+    padding: 14px 16px;
+    border-radius: 10px;
+  }
+
+  /* Dots */
+  .restore-point-1 {
+    top: 29%;
+    left: 80%;
+  }
+  .restore-point-2 {
+    top: 65%;
+    left: 77.3%;
+  }
+  .restore-point-3 {
+    top: 65.5%;
+    left: 19%;
+  }
+  .restore-point-4 {
+    top: 28%;
+    left: 16.5%;
+  }
+
+
+
+
+
+    .moment_dot1{
+        left: 20%;
+        top: 35%;
+    }
+    .moment_dot2{
+        left: 77%;
+        top: 34.5%;
+    }
+    .moment_dot3{
+        left: 70%;
+        top: 59.8%;
+    }
+    .moment_dot4{
+        left: 25%;
+    }
+    
+    .moment_point1{
+        left: calc(20% - (238px / 2));
+        top: calc(36% - 100px);
+    }
+    .moment_point2{
+        left: calc(77% - (238px / 2));
+        top: calc(36% - 100px);
+    }
+    .moment_point3{
+        left: calc(70% - (100px / 2));
+        top: calc(58% + 30px);
+    }
+    .moment_point4{
+        left: calc(25% - (238px / 2));
+        top: calc(59% + 30px);
+    }
+
+
+
+
+    .serviceFooter_bg_logomark{
+        position: absolute;
+        bottom: auto;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        height: auto;
+    }
+
+}
+
+/* === MOBILE: 767px and below === */
+@media (max-width: 767px) {
+    .information_secIn{
+        gap: 20px;
+    }
+
+
+    .section_CTA.serviceLP_section_CTA{
+        margin-top: 40px;
+    }
+
+
+    .restore-wheel-section {
+        display: none;
+    }
+    .restore-wheel-inner .section_head::before{
+        display: none;
+    }
+    .restore-section-mobile{
+        display: block;
+    }
+
+    .restore_cards_wrapper{
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .restore_mobCard{
+        background: rgba(23, 17, 44, 1);
+        border: 0.7px solid rgba(60, 56, 79, 1);
+
+        padding: 20px 24px;
+        border-radius: 12px;
+    }
+    .restore_mobCard .restore_card_title{
+        font: 400 20px var(--adobeFont);
+        letter-spacing: -1%;
+        line-height: 22px;
+        margin-bottom:10px;
+    }
+
+    .restore_mobCard .restore_card_body{
+        font-size: 14px;
+    }
+
+
+
+    .moment_img_Wrap{
+        display: none;
+    }
+    .moment_dot{
+        display: none;
+    }
+
+    .moment_cntnt_wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 20px;
+        margin-top: 40px;
+    }
+    .moment_point{
+        position: relative;
+        inset: auto;
+        width: 100%;
+        max-width: 90%;
+    }
+
+    
+
+    .technology_biology_in{
+        padding: 0px 0;
+    }
+    .tech_meet_bio_cntntWrap{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+
+        margin-top: 40px;
+    }
+
+
+
+    .deeper_work_in{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 60px 0;
+    }
+    .deeper_work_img {
+        overflow: hidden;
+        width: 100%;
+        max-height: 500px;
+    }
+    .deeper_work_in .container{
+        padding: 0 20px;
+    }
+    .deeper_work_body{
+        gap: 40px;
+        padding-top: 30px;
+    }
+
+
+    .serviceLP_footer{
+        padding: 0 20px;
+        padding-top: 30%;
+    }
+
+}
+
+/* === SMALL MOBILE: 480px and below === */
+@media (max-width: 480px) {
+    .hero_content_wrap_top h1{
+        font-size: 40px;
+    }
+
+
+
+    .restore-section-mobile{
+        padding: 60px 0;
+    }
+
+
+    .moment_cntnt_wrapper{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px 20px;
+        margin-top: 40px;
+    }
+    .moment_point{
+        align-items: start;
+        text-align: left;
+        gap: 0px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgb(49, 49, 49);
+    }
+    .moment_secIn::before{
+        display: none;
+    }
+
+
+    .technology_biology_in{
+        padding: 60px 0;
+    }
+    .tech_meet_bio_cntntWrap{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .deeper_work_in{
+        padding-top: 0;
+    }
+    .deeper_work_img{
+        max-height: 260px;
+    }
+
+    .serviceLP_footer{
+        padding: 0 20px;
+        padding-top: 40%;
+    }
+    .serviceFooter_gradient{
+        top: -30%;
+    }
+}

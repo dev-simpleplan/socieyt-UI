@@ -1512,6 +1512,9 @@ footer .footer_fade_bar{
 
 
 /* ------------- ORBIT SECTION ----------- */
+.restore-section-mobile{
+  display: none;
+}
 .restore-wheel-inner .section_head{
   position: relative;
   width: fit-content;
@@ -1608,7 +1611,6 @@ footer .footer_fade_bar{
 }
 .restore-card p{
   font-size: 14px;
-  /* min-width: 290px; */
 }
 
 
