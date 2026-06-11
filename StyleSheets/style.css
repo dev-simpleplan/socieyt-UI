@@ -52,6 +52,7 @@ p {
   font-size: 18px;
   line-height: 150%;
   letter-spacing: 1%;
+  font-weight: 400;
 }
 
 img {
@@ -507,18 +508,15 @@ header {
   cursor: pointer;
   border-bottom: 0.7px solid rgba(104, 104, 104, 1);
   position: relative;
-  /* overflow: hidden; */
-  /* margin-left: 45px; */
 }
 
 .tab-logomark {
   position: absolute;
   left: -50px;
   top: 32px;
-  /* transform: translateY(-50%); */
   width: 35px;
   height: 35px;
-  background-image: url(../Images/logoMark.svg); /* apni image path do */
+  background-image: url(../Images/logoMark.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -1436,6 +1434,10 @@ footer .footer_fade_bar{
   padding-top: 100px;
 }
 
+.serviceHero_section .hero_subTitle{
+  max-width: 680px;
+}
+
 .serviceHero_section .hero_fade_bar{
   z-index: 9;
   height: 200px;
@@ -1497,6 +1499,13 @@ footer .footer_fade_bar{
 /* ------- MINI CTA BAR -------- */
 .serviceLP_section_CTA{
   margin-top: 0;
+}
+
+.health_system_in.serviceLP .tab-item{
+  opacity: 0.5;
+}
+.health_system_in.serviceLP .tab-item.active{
+  opacity: 1;
 }
 
 
@@ -2024,6 +2033,24 @@ footer .footer_fade_bar{
   transition-delay: 0s;
 }
 
+.plan_cards_container.serviceLP .plan_card .plan_benefit_title{
+  font-family: "Satoshi", sans-serif;
+}
+.plan_cards_container.serviceLP .plan_card .plan_benefit_info ul li{
+  font: 400 16px var(--adobeFont);
+  letter-spacing: 2%;
+}
+.plan_cards_container.serviceLP .plan_card .plan_benefit_info ul li img{
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 12px;
+  height: auto;
+}
+.plan_cards_container.serviceLP .plan_card .plan_benefit_info ul li::before{
+  display: none;
+}
+
 
 
 
@@ -2052,34 +2079,46 @@ footer .footer_fade_bar{
 /* ------ FOOTER SERVICE LP -------- */
 footer{
   position: relative;
-  overflow: hidden;
 }
 .serviceLP_footer{
-  padding-top: 100px;
+  padding: 0 40px;
+  padding-top: 30%;
   position: relative;
+  overflow: hidden;
 }
 
 .serviceLP_footer::before{
   content: '';
   position: absolute;
-  width: 180%;
+  width: 130%;
   height: 100%;
   border-radius: 50%;
   background: #131313;
-  z-index: -1;
-  top: 10%;
+  z-index: 0;
+  top: 15%;
+  filter: blur(30px);
 }
-
-.footer_lower_fade{
+.serviceFooter_bg_logomark{
   position: absolute;
+  bottom: 0;
   left: 50%;
-  top: 0;
   transform: translateX(-50%);
-  width: 130%;
-  height: 30%;
-  background: linear-gradient(180deg, #0817BE -13.77%, #4C18C7 54.33%, #131313 90.08%);
-  /* backdrop-filter: blur(304px); */
-  filter: blur(40px);
-  border-radius: 50%;
-  z-index: -2;
+  width: 60%;
+  height: auto;
+}
+.serviceLP_footer .footer_info_bar{
+  position: relative;
+  z-index: 1;
+  color: #8F8F8F;
+}
+.serviceLP_footer .footer_info_bar a{
+  color: #8F8F8F;
+}
+.serviceFooter_gradient{
+  position: absolute;
+  left: 0;
+  top: -50%;
+  width: 100%;
+  height: auto;
+  z-index: -1;
 }

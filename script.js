@@ -492,7 +492,9 @@ gsap.from(".hero_content_wrap", {
 // ------- Difference Section Intersect Shape Code ------------
 // ===========================================================
 
-function intersect() {
+const differenceSection = document.querySelector(".difference_section_in");
+if(differenceSection){
+  function intersect() {
   const svg = document.getElementById("vs");
   const ns = "http://www.w3.org/2000/svg";
 
@@ -756,15 +758,16 @@ function intersect() {
   );
 }
 intersect();
+}
+
 
 
 
 
 
 // ======== FAQs Open/Close Code ===========
-
 const faqItems = document.querySelectorAll(".faq-item");
-faqItems.forEach(item => {
+  faqItems.forEach(item => {
   const btn = item.querySelector(".faq-question");
 
   btn.addEventListener("click", () => {
@@ -783,6 +786,7 @@ faqItems.forEach(item => {
     icon.textContent = item.classList.contains("active") ? "–" : "+";
   });
 });
+
 
 
 
