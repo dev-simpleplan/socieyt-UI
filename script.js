@@ -922,3 +922,191 @@ document.querySelectorAll(".img-reveal").forEach((wrapper) => {
 //         }
 //     });
 // });
+
+
+
+const tabs = document.querySelectorAll('.ai-tab-btn');
+    const indicator = document.querySelector('.ai-tab-indicator');
+
+    function moveIndicator(btn) {
+      const r = btn.getBoundingClientRect();
+      const p = btn.parentElement.getBoundingClientRect();
+
+      indicator.style.left = (r.left - p.left) + 'px';
+      indicator.style.width = r.width + 'px';
+    }
+
+    function centerActiveTab(btn) {
+      const tabsContainer = btn.parentElement;
+
+      tabsContainer.scrollTo({
+        left:
+          btn.offsetLeft -
+          (tabsContainer.offsetWidth / 2) +
+          (btn.offsetWidth / 2),
+        behavior: 'smooth'
+      });
+    }
+
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabs.forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.ai-tab-content').forEach(c => c.classList.remove('active'));
+
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+
+        moveIndicator(btn);
+        centerActiveTab(btn); // 👈 Added
+
+        initSlider(document.getElementById(btn.dataset.tab));
+      });
+    });
+
+    window.addEventListener('load', () => {
+      const activeTab = document.querySelector('.ai-tab-btn.active');
+
+      moveIndicator(activeTab);
+      centerActiveTab(activeTab); // 👈 Added
+
+      document.querySelectorAll('.ai-tab-content').forEach(initSlider);
+    });
+
+    window.addEventListener('resize', () => {
+      const activeTab = document.querySelector('.ai-tab-btn.active');
+
+      moveIndicator(activeTab);
+      centerActiveTab(activeTab); // optional
+    });
+
+    function initSlider(tab) {
+      const track = tab.querySelector('.carousel-track');
+      const slides = tab.querySelectorAll('.carousel-slide');
+      const nav = tab.querySelector('.ai-nav-row');
+
+      if (!track) return;
+
+      let visible = window.innerWidth < 768 ? 1 : window.innerWidth < 992 ? 2 : 4;
+      let max = Math.max(0, slides.length - visible);
+      let current = 0;
+
+      function render() {
+        track.style.transform = `translateX(-${current * (100 / visible)}%)`;
+        nav.innerHTML = '';
+
+        if (max === 0) return;
+
+        const prev = document.createElement('button');
+        prev.className = 'arrow-btn';
+        prev.innerHTML = '←';
+
+        const next = document.createElement('button');
+        next.className = 'arrow-btn';
+        next.innerHTML = '→';
+
+        const dots = document.createElement('div');
+        dots.className = 'dots';
+
+        for (let i = 0; i <= max; i++) {
+          const d = document.createElement('div');
+          d.className = 'dot' + (i === current ? ' active' : '');
+          d.onclick = () => {
+            current = i;
+            render();
+          };
+          dots.appendChild(d);
+        }
+
+        prev.onclick = () => {
+          if (current > 0) {
+            current--;
+            render();
+          }
+        };
+
+        next.onclick = () => {
+          if (current < max) {
+            current++;
+            render();
+          }
+        };
+
+        nav.append(prev, dots, next);
+      }
+
+      render();
+    }
+
+    // ====== HUMAN EDGE SECTION ANIMATION ======
+    if (window.innerWidth > 991) {
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".human-edge-content-wrap",
+                    start: "top top",
+                    end: "+=100%",
+                    scrub: 1,
+                    pin: ".human-edge-sticky-wrapper",
+                    anticipatePin: 1
+                }
+            });
+
+            /* Sphere only */
+
+            tl.to({}, {
+                duration: 1.2
+            })
+
+                /* Right content */
+
+                .fromTo(
+                    ".human-edge-item-right",
+                    {
+                        opacity: 0,
+                        y: 60
+                    },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8
+                    }
+                )
+
+                /* Hold */
+
+                .to({}, {
+                    duration: 0.8
+                })
+
+                /* Left content */
+
+                .fromTo(
+                    ".human-edge-item-left",
+                    {
+                        opacity: 0,
+                        y: 60
+                    },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8
+                    }
+                )
+
+                /* Final hold */
+
+                .to({}, {
+                    duration: 0.4
+                });
+
+            // gsap.to(".sphere-svg", {
+            //     rotation: 360,
+            //     duration: 18,
+            //     repeat: -1,
+            //     ease: "none",
+            //     transformOrigin: "center center"
+            // });
+        }
+
