@@ -189,20 +189,20 @@ tl.to(
 );
 
 // Move dot around full circle
-tl.to(
-  "#movingDot",
-  {
-    motionPath: {
-      path: "#orbitPath",
-      align: "#orbitPath",
-      alignOrigin: [0.5, 0.5],
-      autoRotate: false,
-    },
-    ease: "none",
-    duration: 1,
-  },
-  0,
-);
+// tl.to(
+//   "#movingDot",
+//   {
+//     motionPath: {
+//       path: "#orbitPath",
+//       align: "#orbitPath",
+//       alignOrigin: [0.5, 0.5],
+//       autoRotate: false,
+//     },
+//     ease: "none",
+//     duration: 1,
+//   },
+//   0,
+// );
 
 tl.addLabel("point1", 0);
 tl.addLabel("point2", 0.25);
@@ -817,7 +817,7 @@ const faqItems = document.querySelectorAll(".faq-item");
 
 
 
-
+// =============== IMAGE TICKER CODE -=================
 const track = document.getElementById('track');
 
 if (track) {
@@ -844,7 +844,7 @@ if (track) {
 
 
 
-
+// ==================== IMAGE REVEAL ANIMATION SNIPPET ========================
 document.querySelectorAll(".img-reveal").forEach((wrapper) => {
     const img = wrapper.querySelector("img");
 
@@ -899,3 +899,26 @@ document.querySelectorAll(".img-reveal").forEach((wrapper) => {
         ease: "power3.inOut",
     }, 0); // ← runs simultaneously
 });
+
+
+
+
+
+// gsap.utils.toArray(".reveal-stagger").forEach((wrapper) => {
+//     const children = wrapper.children; // direct children only
+
+//     gsap.set(children, { opacity: 0, y: 30 });
+
+//     gsap.to(children, {
+//         opacity: 1,
+//         y: 0,
+//         duration: 0.8,
+//         ease: "power3.out",
+//         stagger: 0.15, // delay between each child
+//         scrollTrigger: {
+//             trigger: wrapper,
+//             start: "top 80%",
+//             toggleActions: "play none none none",
+//         }
+//     });
+// });

@@ -123,6 +123,28 @@
     }
 
 
+
+    .outcomes_wheel_section{
+        display: none;
+    }
+    .outcomes_mobile_section{
+        display: block;
+    }
+    .outComes_mobile_wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 40px;
+    }
+    .outComes_points{
+        text-align: center;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #565656;
+    }
+
+
+
     .approach_gradient {
         position: absolute;
         left: 0;
@@ -209,6 +231,9 @@
 
 
 @media screen and (max-width: 479px){
+    .hero_content_wrap.hero_content_wrap_bot{
+        height: 90%;
+    }
     .hero_section_img{
         width: 260%;
     }
@@ -296,7 +321,13 @@
         gap: 20px;
     }
     .steps_card_item{
-        gap: 60px;
+        gap: 20px;
+        border: 0;
+        border-bottom: 0.7px solid rgba(150, 150, 150, 1);
+        padding: 0 0 20px;
+    }
+    .step_count{
+        font-size: 26px;
     }
 
 

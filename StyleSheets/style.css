@@ -729,6 +729,10 @@ header {
 /* =============================================== */
 /* ------------- OUTCOMES WHEEL SECTION ---------- */
 
+.outcomes_mobile_section{
+  display: none;
+}
+
 .outComes_wheel_wrapper {
   display: flex;
   justify-content: center;
